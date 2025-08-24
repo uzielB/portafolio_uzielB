@@ -69,6 +69,43 @@ nav li:hover{
     color: #1d1c1c; 
 }
 
+.hover-underline {
+    /* Mantenemos tus estilos de fuente y color */
+    font-size: 1rem;
+    color: #1d1c1c; /* Usa tu color actual */
+    
+    /* Agregamos las propiedades para el efecto */
+    position: relative;
+    display: inline-block; /* Necesario para que el efecto funcione */
+}
+
+/* Pseudo-elementos para las líneas */
+.hover-underline::after,
+.hover-underline::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #ff0000, #00ffff);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+
+/* Línea superior */
+.hover-underline::before {
+    top: -5px;
+    transform-origin: left;
+}
+
+/* Animación al pasar el mouse */
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+    transform: scaleX(1);
+}
+
 .sobre_mi p {
     line-height: 1.6; 
     color: #333333; 
@@ -113,6 +150,95 @@ nav li:hover{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.boton-container {
+    display: flex; /* Convierte el contenedor en un Flexbox */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 20px; /* Agrega 20px de espacio entre cada botón */
+    margin-top: 20px; /* Opcional: añade espacio entre el párrafo y los botones */
+}
+
+.glow-on-hover {
+    width: 50px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    
+    /* Adaptamos tus estilos de fuente y texto */
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white; /* Color del texto por defecto, tus clases de botón lo sobrescribirán */
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* El color de fondo de esta capa de atrás será el mismo que el del botón */
+    background: #111; 
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+/* Animación del degradado */
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/*
+ * Estilos específicos para cada botón.
+ * Aquí sobrescribimos el color de fondo de la capa ':after' y el color del texto.
+ */
+.boton.glow-on-hover:after {
+    background-color: #007bff;
+}
+
+.botongit.glow-on-hover:after {
+    background-color: #2f2f2e;
+}
+
+.botonlink.glow-on-hover:after {
+    background-color: #71aef3;
+    color: rgb(31, 31, 31); /* Mantén tu color de texto original */
+}
+
+.botonlink.glow-on-hover {
+    color: rgb(31, 31, 31);
+}
+
+
 .card2 {
     display: flex;
     justify-content: center;
@@ -131,35 +257,117 @@ nav li:hover{
     text-align: justify; 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 1.6;
+    /* HOLOGRAPHIC STYLES */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
 }
 
+.enfoque1::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 260%;
+    height: 200%;
+    background: linear-gradient(
+        0deg,
+        transparent,
+        transparent 50%,
+        rgba(0, 255, 255, 0.3)
+    );
+    transform: rotate(-20deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+/* Hover effects */
+.enfoque1:hover {
+    transform: scale(1.02); /* Slight scale to make it stand out */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.enfoque1:hover::before {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
+}
+
+
+
+/* Este es el contenedor de todas las tarjetas, no necesita cambios */
 .card3 {
-    display: flex; /* Convierte el contenedor en flexible */
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea en pantallas pequeñas */
-    gap: 30px; /* Agrega un espacio entre las tarjetas */
-    margin-top: 50px; /* Agrega un margen superior para separarlo de la navbar */
+    display: flex;
+    justify-content: center;
+    
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
 }
 
-/* Ajustes a tu clase .content */
-.herramientas {
-    background-color: #dddada; 
-    border-radius: 12px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+/* Contenedor principal para cada tarjeta (la que tiene el hover) */
+.card-flip {
+    width: 270px;
+    height: 350px; /* Le damos una altura fija para que el flip funcione bien */
+    perspective: 1000px;
+}
+
+/* Contenedor que rota al pasar el mouse por encima */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-flip:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilos para el frente y la parte de atrás de la tarjeta */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    backface-visibility: hidden;
     padding: 30px;
-    width: 270px; /* Usa un ancho fijo o porcentual para que quepa en la fila */
-    text-align: justify; 
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
 }
 
-.skill h3 {
-    margin-bottom: 10px; 
-    color: #1d1c1c; 
+/* Aplica tus estilos originales a la cara frontal */
+.card-front {
+    background-color: #dddada;
+    color: #1d1c1c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Estilos de la cara trasera */
+.card-back {
+    background-color: #326f95;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Ajustes a los títulos y listas dentro de las tarjetas */
+.skill h3, .skill h4 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: inherit; 
 }
 
 .skill ul {
-    line-height: 1.4; 
-    color: #333333; 
+    line-height: 1.4;
+    padding-left: 0;
+    list-style-type: none;
 }
 
 .botoncodigos{
