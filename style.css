@@ -1,0 +1,219 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #dadada; /* Un color de fondo suave para que la tarjeta destaque */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    height: 100vh; /* Ocupa la altura completa de la pantalla */
+
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: rgb(0, 0, 82);
+    padding: 10px;
+}
+
+nav h4 {
+    color:antiquewhite;
+    padding: 20px;
+    font-family:'Courier New', Courier, monospace;
+    margin-right: 550px; 
+    margin-left: 100px;
+
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav li a{
+    text-decoration: none;
+    color:antiquewhite;
+    font-family:'Courier New', Courier, monospace;
+
+    font-size: 15px;
+}
+
+nav li:hover{
+    color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(79, 76, 76);
+}
+
+.cards-container {
+    display: flex; /* Convierte el contenedor en flexible */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea en pantallas pequeñas */
+    gap: 30px; /* Agrega un espacio entre las tarjetas */
+    margin-top: 50px; /* Agrega un margen superior para separarlo de la navbar */
+}
+
+/* Ajustes a tu clase .content */
+.content {
+    background-color: #dddada; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 30px;
+    width: 450px; /* Usa un ancho fijo o porcentual para que quepa en la fila */
+    text-align: center; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.sobre_mi h3 {
+    margin-bottom: 10px; 
+    color: #1d1c1c; 
+}
+
+.sobre_mi p {
+    line-height: 1.6; 
+    color: #333333; 
+}
+
+.boton{
+    
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Elimina la línea de subrayado del enlace */
+    display: inline-block; /* Permite que el enlace se comporte como un bloque para aplicar padding */
+    border: none;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.botongit{
+    
+    background-color: #2f2f2e; /* Color de fondo del botón */
+    color:white;
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Elimina la línea de subrayado del enlace */
+    display: inline-block; /* Permite que el enlace se comporte como un bloque para aplicar padding */
+    border: none;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.botonlink{
+    
+    background-color: #71aef3; /* Color de fondo del botón */
+    color: rgb(31, 31, 31); /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Elimina la línea de subrayado del enlace */
+    display: inline-block; /* Permite que el enlace se comporte como un bloque para aplicar padding */
+    border: none;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 30px; 
+    margin-top: 30px; 
+    width: 100%;
+}
+
+.enfoque1 {
+    background-color: #dddada; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 30px;
+    width: 990px; /* Esto es (450px * 2) + 30px de gap. */
+    text-align: justify; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+}
+
+.card3 {
+    display: flex; /* Convierte el contenedor en flexible */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea en pantallas pequeñas */
+    gap: 30px; /* Agrega un espacio entre las tarjetas */
+    margin-top: 50px; /* Agrega un margen superior para separarlo de la navbar */
+}
+
+/* Ajustes a tu clase .content */
+.herramientas {
+    background-color: #dddada; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 30px;
+    width: 270px; /* Usa un ancho fijo o porcentual para que quepa en la fila */
+    text-align: justify; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.skill h3 {
+    margin-bottom: 10px; 
+    color: #1d1c1c; 
+}
+
+.skill ul {
+    line-height: 1.4; 
+    color: #333333; 
+}
+
+.botoncodigos{
+    background-color: #218cffb8; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Elimina la línea de subrayado del enlace */
+    display: inline-block; /* Permite que el enlace se comporte como un bloque para aplicar padding */
+    border: none;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.proyectos {
+    background-color: #dddada; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 30px;
+    width: 990px; /* Esto es (450px * 2) + 30px de gap. */
+    text-align: justify; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+}
+
+.educacion {
+    background-color: #dddada; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 30px;
+    width: 990px; /* Esto es (450px * 2) + 30px de gap. */
+    text-align: justify; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+}
+
+.card3 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 30px; 
+    margin-top: 30px; 
+    width: 100%;
+}
+
+.card4 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 30px; 
+    margin-top: 30px; 
+    width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
